@@ -1,0 +1,19 @@
+# deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver
+spec:
+  minReadySeconds: 30 #before crashing to be successful
+  selector:
+    matchLabels:
+      app: webserver
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: webserver
+    spec:
+      containers:
+        - name: webserver
+          image: "nginxdemos/hello" 

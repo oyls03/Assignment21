@@ -1,0 +1,12 @@
+# pod.yaml
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webserver
+  labels:
+    app: webserver
+spec:
+  containers:
+    - name: webserver
+      image: nginxdemos/hello
